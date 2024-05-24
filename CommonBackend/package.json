@@ -1,0 +1,39 @@
+{
+  "name": "commonbackend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tericsoft-product/CommonBackend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tericsoft-product/CommonBackend/issues"
+  },
+  "homepage": "https://github.com/tericsoft-product/CommonBackend#readme",
+  "dependencies": {
+    "@types/jsonwebtoken": "^9.0.5",
+    "async": "^3.2.4",
+    "aws-sdk": "^2.1359.0",
+    "aws-xray-sdk": "^3.5.3",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "lodash": "^4.17.21",
+    "mailcomposer": "^4.0.2",
+    "moment": "^2.29.4",
+    "moment-timezone": "^0.5.43",
+    "mongodb": "^4.12.0",
+    "multer": "^1.4.5-lts.1",
+    "tsyringe": "^4.7.0",
+    "validatorjs": "^3.22.1"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/multer": "^1.4.11"
+  }
+}
