@@ -150,17 +150,12 @@ class MongoBaseRecord {
 
     add(payload: any): Promise<any> {
         return new Promise(async (resolve, reject) => {
-            // await AWSXRay?.captureAsyncFunc(`MongoDB-${this.collection}-add`, async (subsegment) => {
                 try {
-                    // subsegment?.addMetadata('payload', payload);
 
                     const response = await this.dbClient.collection(this.collection).insertOne(payload);
 
-                    // subsegment?.addMetadata('dbResponse', response);
                     resolve(response);
                 } catch (e) {
-                    // subsegment?.addError(e);
-                    // subsegment?.addMetadata('error', serializeError(e));
 
                     reject(e);
                 }finally{
@@ -189,9 +184,6 @@ class MongoBaseRecord {
             try {
                 
                 const data=await this.dbClient.collection(this.collection).findOne(conditions)
-                
-                
-                
                 resolve(data)
             } catch (error) {
                 rejects(error)
@@ -218,9 +210,12 @@ class MongoBaseRecord {
 
      delete(payload:any):Promise<any>{
         return new Promise(async(resolve,rejects)=>{
-            
-            
             try {
+                let x=await this.getById(payload)
+                if(!x){
+                    return rejects("There is No Email")
+                }
+                
                 const response=await this.dbClient.collection(this.collection).deleteOne(payload);
                 resolve(response)
                 
