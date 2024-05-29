@@ -1,7 +1,6 @@
 import {injectable} from "tsyringe";
 import express from "express";
 import {IRouter} from "./router/IRouter";
-import {CleanResponse} from "../Helper";
 
 @injectable()
 class ExpressRouterRequest implements IRouter {
@@ -36,7 +35,6 @@ class ExpressRouterRequest implements IRouter {
             success: "",
             ...payload,
         };
-        response = CleanResponse(response);
         response["success"] = code < 400;
         this.response?.status(code).send(response);
     }
